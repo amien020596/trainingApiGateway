@@ -1,4 +1,4 @@
 # trainingApiGateway
-folder LumenApiGateway itu untuk api gatewaynya
-folder LumenAuthorsApi itu untuk api Authorsnya
-folder LumenBooksApi itu untuk api Booksnya
+folder LumenApiGateway itu untuk api gatewaynya <br/>
+folder LumenAuthorsApi itu untuk api Authorsnya <br/>
+folder LumenBooksApi itu untuk api Booksnya <br/>
