@@ -1,3 +1,7 @@
 LumenApiGateway/vendor
 LumenAuthorsApi/vendor
 LumenBooksApi/vendor
+
+LumenApiGateway/.env
+LumenAuthorsApi/.env
+LumenBooksApi/.env
