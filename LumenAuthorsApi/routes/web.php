@@ -17,7 +17,7 @@
 $router->group(['prefix' => 'authors'], function () use ($router) {
 
     $router->get('/', 'AuthorController@index');
-    $router->post('/', 'AuthorController@create');
+    $router->post('/', 'AuthorController@store');
     $router->get('/{author}', 'AuthorController@show');
     $router->put('/{author}', 'AuthorController@update');
     $router->patch('/{author}', 'AuthorController@update');
