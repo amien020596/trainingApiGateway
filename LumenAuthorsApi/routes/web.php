@@ -21,5 +21,9 @@ $router->group(['prefix' => 'authors'], function () use ($router) {
     $router->get('/{author}', 'AuthorController@show');
     $router->put('/{author}', 'AuthorController@update');
     $router->patch('/{author}', 'AuthorController@update');
-    $router->delete('/{author}', 'AuthorController@destory');
+    $router->delete('/{author}', 'AuthorController@destroy');
+});
+
+$router->group(['namespace' => '\Rap2hpoutre\LaravelLogViewer'], function () use ($router) {
+    $router->get('logs', 'LogViewerController@index');
 });
