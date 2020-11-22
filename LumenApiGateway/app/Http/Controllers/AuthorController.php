@@ -2,38 +2,39 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\AuthorService;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
-use App\Services\BookService;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Log;
 
-class BooksController extends Controller
+class AuthorController extends Controller
 {
     use ApiResponser;
     /**
-     * bookService
+     * authorService
      *
      * @var mixed
      */
-    public $bookService;
-
+    public $authorService;
     /**
-     * __construct
+     * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct(BookService $bookService)
+    public function __construct(AuthorService $authorService)
     {
-        $this->bookService = $bookService;
+        $this->authorService = $authorService;
     }
 
-
     /**
-     * index
+     * return yhe list of author
      *
-     * @return void
+     * @return Illuminate\Http\Response
      */
     public function index()
     {
+        return $this->successResponse($this->authorService->obtainAuthors());
     }
 
     /**
@@ -43,6 +44,7 @@ class BooksController extends Controller
      */
     public function store(Request $request)
     {
+        return $this->successResponse($this->authorService->createAuthor($request->all()), Response::HTTP_CREATED);
     }
 
     /**
@@ -52,6 +54,7 @@ class BooksController extends Controller
      */
     public function show($book)
     {
+        return $this->successResponse($this->authorService->obtainAuthor($book));
     }
 
     /**

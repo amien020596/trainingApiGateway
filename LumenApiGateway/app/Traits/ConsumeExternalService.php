@@ -3,6 +3,7 @@
 namespace App\Traits;
 
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Log;
 
 trait ConsumeExternalService
 {
@@ -20,8 +21,8 @@ trait ConsumeExternalService
     $client = new Client([
       'base_uri' => $this->baseUri
     ]);
-
     $response = $client->request($method, $requestUrl, ['form_params' => $formParams, 'headers' => $headers]);
+    Log::debug("client", [$response]);
     return $response->getBody()->getContents();
   }
 }
