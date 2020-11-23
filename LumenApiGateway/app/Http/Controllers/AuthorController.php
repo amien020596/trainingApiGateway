@@ -52,9 +52,9 @@ class AuthorController extends Controller
      *
      * @return Illuminate\Http\Response
      */
-    public function show($book)
+    public function show($author)
     {
-        return $this->successResponse($this->authorService->obtainAuthor($book));
+        return $this->successResponse($this->authorService->obtainAuthor($author));
     }
 
     /**
@@ -62,8 +62,9 @@ class AuthorController extends Controller
      *
      * @return Illuminate\Http\Response
      */
-    public function update(Request $request, $book)
+    public function update(Request $request, $author)
     {
+        return $this->successResponse($this->authorService->editAuthor($request->all(), $author));
     }
 
     /**
@@ -71,7 +72,8 @@ class AuthorController extends Controller
      *
      * @return Illuminate\Http\Response
      */
-    public function destroy($book)
+    public function destroy($author)
     {
+        return $this->successResponse($this->authorService->deleteAuthor($author));
     }
 }

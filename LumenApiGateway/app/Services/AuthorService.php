@@ -50,8 +50,36 @@ class AuthorService
     return $this->performRequest('POST', 'authors', $data);
   }
 
+  /**
+   * obtainAuthor
+   *
+   * @param  mixed $author
+   * @return void
+   */
   public function obtainAuthor($author)
   {
     return $this->performRequest('GET', "authors/{$author}");
+  }
+
+  /**
+   * editAuthor
+   *
+   * @param  mixed $data
+   * @param  mixed $author
+   * @return void
+   */
+  public function editAuthor($data, $author)
+  {
+    return $this->performRequest('PUT', "authors/{$author}", $data);
+  }
+  /**
+   * deleteAuthor
+   *
+   * @param  mixed $author
+   * @return void
+   */
+  public function deleteAuthor($author)
+  {
+    return $this->performRequest('DELETE', "authors/{$author}");
   }
 }
