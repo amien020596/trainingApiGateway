@@ -29,4 +29,54 @@ class BookService
   {
     $this->baseUri = config('services.books.base_uri');
   }
+  /**
+   * obtainBooks
+   *
+   * @return void
+   */
+  public function obtainBooks()
+  {
+    return $this->performRequest('GET', 'books');
+  }
+  /**
+   * createBooks
+   *
+   * @param  mixed $data
+   * @return void
+   */
+  public function createBooks($data)
+  {
+    return $this->performRequest('POST', 'books', $data);
+  }
+  /**
+   * obtainBook
+   *
+   * @param  mixed $book
+   * @return void
+   */
+  public function obtainBook($book)
+  {
+    return $this->performRequest('GET', "books/{$book}");
+  }
+  /**
+   * editBook
+   *
+   * @param  mixed $data
+   * @param  mixed $book
+   * @return void
+   */
+  public function editBook($data, $book)
+  {
+    return $this->performRequest('PUT', "books/{$book}", $data);
+  }
+  /**
+   * deleteBook
+   *
+   * @param  mixed $book
+   * @return void
+   */
+  public function deleteBook($book)
+  {
+    return $this->performRequest('DELETE', "books/{$book}");
+  }
 }
