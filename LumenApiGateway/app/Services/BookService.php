@@ -44,7 +44,7 @@ class BookService
    * @param  mixed $data
    * @return void
    */
-  public function createBooks($data)
+  public function createBook($data)
   {
     return $this->performRequest('POST', 'books', $data);
   }
