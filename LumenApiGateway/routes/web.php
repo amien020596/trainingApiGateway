@@ -10,6 +10,10 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
+$router->get('/', function () use ($router) {
+    return $router->app->version();
+});
+
 $router->group(['namespace' => '\Rap2hpoutre\LaravelLogViewer'], function () use ($router) {
     $router->get('logs', 'LogViewerController@index');
 });
