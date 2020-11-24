@@ -5,3 +5,7 @@ LumenBooksApi/vendor
 LumenApiGateway/.env
 LumenAuthorsApi/.env
 LumenBooksApi/.env
+
+LumenApiGateway/composer.lock
+LumenAuthorsApi/composer.lock
+LumenBooksApi/composer.lock
