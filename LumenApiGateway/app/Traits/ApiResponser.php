@@ -9,6 +9,10 @@ trait ApiResponser
 
   /**
    * success response of another service
+   *
+   * @param  mixed $data
+   * @param  mixed $code
+   * @return void
    */
   public function successResponse($data, $code = Response::HTTP_OK)
   {
@@ -17,13 +21,22 @@ trait ApiResponser
 
   /**
    * error response dari service api gateway
+   *
+   * @param  mixed $message
+   * @param  mixed $code
+   * @return void
    */
   public function errorResponse($message, $code)
   {
     return response()->json(['message' => $message, 'code' => $code], $code);
   }
+
   /**
    * error message of another service
+   *
+   * @param  mixed $message
+   * @param  mixed $code
+   * @return void
    */
   public function errorMessage($message, $code)
   {
