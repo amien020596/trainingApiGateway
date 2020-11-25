@@ -9,3 +9,6 @@ LumenBooksApi/.env
 LumenApiGateway/composer.lock
 LumenAuthorsApi/composer.lock
 LumenBooksApi/composer.lock
+
+LumenApiGateway/storage/*.key
+LumenApiGateway/storage/*.key
