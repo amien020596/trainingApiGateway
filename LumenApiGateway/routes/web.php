@@ -20,25 +20,27 @@ $router->group(['namespace' => '\Rap2hpoutre\LaravelLogViewer'], function () use
 /**
  * router from books
  */
-$router->group(['prefix' => 'books'], function () use ($router) {
+$router->group(['middleware' => 'client.credentials'], function () use ($router) {
+    $router->group(['prefix' => 'books'], function () use ($router) {
 
-    $router->get('/', 'BookController@index');
-    $router->post('/', 'BookController@store');
-    $router->get('/{book}', 'BookController@show');
-    $router->put('/{book}', 'BookController@update');
-    $router->patch('/{book}', 'BookController@update');
-    $router->delete('/{book}', 'BookController@destroy');
-});
+        $router->get('/', 'BookController@index');
+        $router->post('/', 'BookController@store');
+        $router->get('/{book}', 'BookController@show');
+        $router->put('/{book}', 'BookController@update');
+        $router->patch('/{book}', 'BookController@update');
+        $router->delete('/{book}', 'BookController@destroy');
+    });
 
-/**
- * router from authors
- */
-$router->group(['prefix' => 'authors'], function () use ($router) {
+    /**
+     * router from authors
+     */
+    $router->group(['prefix' => 'authors'], function () use ($router) {
 
-    $router->get('/', 'AuthorController@index');
-    $router->post('/', 'AuthorController@store');
-    $router->get('/{author}', 'AuthorController@show');
-    $router->put('/{author}', 'AuthorController@update');
-    $router->patch('/{author}', 'AuthorController@update');
-    $router->delete('/{author}', 'AuthorController@destroy');
+        $router->get('/', 'AuthorController@index');
+        $router->post('/', 'AuthorController@store');
+        $router->get('/{author}', 'AuthorController@show');
+        $router->put('/{author}', 'AuthorController@update');
+        $router->patch('/{author}', 'AuthorController@update');
+        $router->delete('/{author}', 'AuthorController@destroy');
+    });
 });
