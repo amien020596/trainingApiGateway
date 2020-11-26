@@ -9,13 +9,6 @@
     "license": "MIT",
     "type": "project",
     "require": {
-<<<<<<< HEAD
-=======
-        "php": ">=7.1.3",
-        "dusterio/lumen-passport": "^0.2.8",
-        "guzzlehttp/guzzle": "^6.3",
-        "laravel/lumen-framework": "5.7.*",
->>>>>>> 783a30caed36d039f3ad8b1d31c83b294919efd4
         "rap2hpoutre/laravel-log-viewer": "^1.7",
         "php": ">=7.1.3",
         "dusterio/lumen-passport": "^0.2.8",
