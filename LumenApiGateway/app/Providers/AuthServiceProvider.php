@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\User;
+use Carbon\Carbon;
 use Dusterio\LumenPassport\LumenPassport;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
@@ -38,5 +39,6 @@ class AuthServiceProvider extends ServiceProvider
         // });
 
         LumenPassport::routes($this->app->router);
+        // LumenPassport::tokensExpireIn(Carbon::now()->addHour(1));
     }
 }

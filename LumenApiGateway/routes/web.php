@@ -43,4 +43,25 @@ $router->group(['middleware' => 'client.credentials'], function () use ($router)
         $router->patch('/{author}', 'AuthorController@update');
         $router->delete('/{author}', 'AuthorController@destroy');
     });
+
+    /**
+     * router from users
+     */
+    $router->group(['prefix' => 'users'], function () use ($router) {
+
+        $router->get('/', 'UserController@index');
+        $router->post('/', 'UserController@store');
+        $router->get('/{User}', 'UserController@show');
+        $router->put('/{User}', 'UserController@update');
+        $router->patch('/{User}', 'UserController@update');
+        $router->delete('/{User}', 'UserController@destroy');
+    });
+});
+
+$router->group(['middleware' => 'auth:api'], function () use ($router) {
+
+    // $router->group(['prefix' => ''], function () use ($router) {
+    $router->get('/me', 'UserController@me');
+    $router->get('/test', 'UserController@test');
+    // });
 });
